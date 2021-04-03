@@ -35,3 +35,4 @@ Port-CharacterLength : 8;
 Port-StopBits : 1;
 Port-FlowControl : none;
 ```
+Порядок параметров в данном файле соблюдать необязательно.

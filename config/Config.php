@@ -1,5 +1,5 @@
 <?php
-define ("LICENSE_KEY", "License-key");
+define ("APP_KEY", "App-key");
 define ("PORT", "Port-Name");
 define ("OPENMODE", "Port-OpenMode");
 define ("PORT_BAUDRATE", "Port-BaudRate");
@@ -21,7 +21,7 @@ class Config
      * @param  string $device the name of the device to be used
      * @return string
      */
-    public function getParam($paramName = LICENSE_KEY) {
+    public function getParam($paramName = APP_KEY) {
         $content = file_get_contents(getcwd() . "/config/config.txt");
         $content = preg_replace('/\s+/', '', $content);
         $content = explode(";", $content);
@@ -31,6 +31,7 @@ class Config
             if ($paramValue)
                 return $paramValue;
         }
+        return null;
     }
 
 }

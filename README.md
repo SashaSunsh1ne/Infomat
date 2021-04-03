@@ -10,7 +10,7 @@
 Данный файл понимает такие параметры как:
 * App-key - ключ приложения к базе данных;
 * Port-Name - название порта соединенного со считывателем штрих-кодов, например, COM9;
-* Port-OpenMode - права доступа к порту (чтение/запись и т.п., подробнее [fopen()](https://www.php.net/manual/ru/function.fopen.php));
+* Port-OpenMode - права доступа к порту (чтение/запись и т.п., подробнее [fopen()](https://www.php.net/manual/ru/function.fopen.php);
 * Port-BaudRate - скорость передачи данных;
 * Port-Parity - проверка чётности;
 * Port-CharacterLength - биты данных, то есть сколько бит передавать за один раз;

@@ -25,7 +25,7 @@
 НазваниеПараметра : ЗначениеПараметра;
 
 Пример заполнения файла:
-
+```css
 App-key : fsof00af9fbg08derjvsre9;
 Port-Name : COM5;
 Port-OpenMode : r;
@@ -34,3 +34,4 @@ Port-Parity : none;
 Port-CharacterLength : 8;
 Port-StopBits : 1;
 Port-FlowControl : none;
+```

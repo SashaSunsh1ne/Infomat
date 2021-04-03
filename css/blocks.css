@@ -1,0 +1,46 @@
+.infoblock {
+    border: 3px solid rgb(49, 86, 99);
+    border-radius: 10px;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    text-align: center;
+    padding: 15px;
+    background-color: lightblue;
+}
+
+#count {
+    width: 50px;
+}
+
+#check_barcode {
+    display: none;
+}
+
+@media only screen and (max-width: 510px) {
+    .infoblock {
+        width: 300px;
+    }
+    .exitButton {
+        position: fixed;
+        right: 50px;
+        bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .infoblock {
+        width: 280px;
+    }
+    .exitButton {
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .infoblock {
+        width: 180px;
+    }
+}

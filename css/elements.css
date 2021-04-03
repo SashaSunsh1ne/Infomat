@@ -1,0 +1,49 @@
+* {
+    margin: 5px;
+    font-size: large;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: skyblue;
+}
+
+button {
+    text-align: center;
+    border: 3px solid rgb(49, 86, 99);
+    background-color: skyblue;
+    border-radius: 5px;
+    outline: none;
+    height: 35px;
+}
+
+input[type="text"],
+input[type="password"] {
+    text-align: center;
+    border: 3px solid rgb(49, 86, 99);
+    border-radius: 5px;
+    outline: none;
+    height: 28px;
+}
+
+input[type="submit"] {
+    min-width: 100px;
+    text-align: center;
+    border: 3px solid rgb(49, 86, 99);
+    background-color: skyblue;
+    border-radius: 5px;
+    outline: none;
+    height: 35px;
+}
+
+@media only screen and (max-width: 350px) {
+    input[type="text"],
+    input[type="password"] {
+        width: 170px;
+    }
+    * {
+        margin: 2px;
+        padding: 0;
+    }
+}

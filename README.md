@@ -26,7 +26,6 @@
 ```
 Пример заполнения файла:
 ```css
-Api-url : http://your.api.ru;
 Api-key : fsof00af9fbg08derjvsre9;
 Port-Name : COM1;
 Port-OpenMode : r;

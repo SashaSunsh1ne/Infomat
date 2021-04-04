@@ -1,4 +1,6 @@
 <?php
+namespace serialPort;
+
 define ("SERIAL_DEVICE_NOTSET", 0);
 define ("SERIAL_DEVICE_SET", 1);
 define ("SERIAL_DEVICE_OPENED", 2);
@@ -18,7 +20,7 @@ define ("SERIAL_DEVICE_OPENED", 2);
  * @thanks Jim Wright for OSX cleanup/fixes.
  * @copyright under GPL 2 licence
  */
-class phpSerial
+class PhpSerial
 {
 	var $_device = null;
 	var $_windevice = null;
@@ -37,7 +39,7 @@ class phpSerial
 	/**
 	 * Constructor. Perform some checks about the OS and setserial
 	 *
-	 * @return phpSerial
+	 * @return PhpSerial
 	 */
 	function __construct()
 	{

@@ -23,11 +23,11 @@ class IndexController
         //$this->serial->deviceSet($this->config->getParam(PORT));
 
         /*$this->portConfigure([
-            "baudRate"          =>  $this->config->getParam(BAUD_RATE) ?: null,
-            "parity"            =>  $this->config->getParam(PARITY) ?: null,
-            "characterLength"   =>  $this->config->getParam(CHARACTER_LENGTH) ?: null,
-            "stopBits"          =>  $this->config->getParam(STOP_BITS) ?: null,
-            "flowControl"       =>  $this->config->getParam(FLOW_CONTROL) ?: null
+            "baudRate"          =>  $this->config->getParam(BAUD_RATE) ?: 9600,
+            "parity"            =>  $this->config->getParam(PARITY) ?: "none",
+            "characterLength"   =>  $this->config->getParam(CHARACTER_LENGTH) ?: 8,
+            "stopBits"          =>  $this->config->getParam(STOP_BITS) ?: 1,
+            "flowControl"       =>  $this->config->getParam(FLOW_CONTROL) ?: "none"
         ]);*/
     }
 
@@ -46,21 +46,11 @@ class IndexController
     {
         if (!$this->serial)
             return;
-        if ($params->baudRate) {
-            $this->serial->confBaudRate($params->baudRate);
-        }
-        if ($params->parity) {
-            $this->serial->confBaudRate($params->parity);
-        }
-        if ($params->characterLength) {
-            $this->serial->confBaudRate($params->characterLength);
-        }
-        if ($params->stopBits) {
-            $this->serial->confBaudRate($params->stopBits);
-        }
-        if ($params->flowControl) {
-            $this->serial->confBaudRate($params->flowControl);
-        }
+        $this->serial->confBaudRate($params->baudRate);
+        $this->serial->confBaudRate($params->parity);
+        $this->serial->confBaudRate($params->characterLength);
+        $this->serial->confBaudRate($params->stopBits);
+        $this->serial->confBaudRate($params->flowControl);
     }
 
 }

@@ -29,6 +29,8 @@ class IndexController
             "stopBits"          =>  $this->config->getParam(STOP_BITS) ?: 1,
             "flowControl"       =>  $this->config->getParam(FLOW_CONTROL) ?: "none"
         ]);*/
+
+        //$this->serial->deviceOpen($this->config->getParam(OPEN_MODE) ?: "r");
     }
 
     public function readSerialUntilResult()

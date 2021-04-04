@@ -8,7 +8,7 @@
 ### 1.2 Параметры
 ---
 Данный файл понимает такие параметры как:
-* App-key - ключ приложения к базе данных;
+* Api-key - ключ приложения к базе данных;
 * Port-Name - название порта соединенного со считывателем штрих-кодов, например, COM9;
 * Port-OpenMode - права доступа к порту (чтение/запись и т.п., подробнее [fopen()](https://www.php.net/manual/ru/function.fopen.php);
 * Port-BaudRate - скорость передачи данных;
@@ -26,8 +26,9 @@
 ```
 Пример заполнения файла:
 ```css
-App-key : fsof00af9fbg08derjvsre9;
-Port-Name : COM5;
+Api-url : http://your.api.ru;
+Api-key : fsof00af9fbg08derjvsre9;
+Port-Name : COM1;
 Port-OpenMode : r;
 Port-BaudRate : 9600;
 Port-Parity : none;

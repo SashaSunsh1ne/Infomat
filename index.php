@@ -1,3 +1,8 @@
+<?php
+use controllers\IndexController;
+include("controllers/IndexController.php");
+$controller = new IndexController();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,29 +33,6 @@
             $("#barcode").mask("999,99999");
         });
     </script>
-
-    <?php
-    include getcwd() . "/serialPort/php_serial.class.php";
-    include getcwd() . "/config/Config.php";
-    $config = new Config();
-    $serial = new phpSerial();
-    $serial->deviceSet($config->getParam(PORT));
-    $serial->confBaudRate($config->getParam(PORT_BAUDRATE));
-    $serial->confParity($config->getParam(PORT_PARITY));
-    $serial->confCharacterLength($config->getParam(PORT_CHARACTERLENGTH));
-    $serial->confStopBits($config->getParam(PORT_STOPBITS));
-    $serial->confFlowControl($config->getParam(PORT_FLOWCONTROL));
-    $serial->deviceOpen($config->getParam(OPENMODE));
-
-    sleep(2);
-    $serial->sendMessage("Hello");
-    $read = $serial->readPort();
-    echo ".".$read.".";
-
-    sleep(2);
-
-    $serial->deviceClose();
-    ?>
 
 </body>
 

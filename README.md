@@ -1,12 +1,8 @@
 # Infomat
----
 ## 1 Файл настроек - config.txt
----
 ### 1.1 Расположение
----
 Файл с параметрами должен быть расположен в папке /config и иметь название config.txt
 ### 1.2 Параметры
----
 Данный файл понимает такие параметры как:
 * Api-key - ключ приложения к базе данных;
 * Port-Name - название порта соединенного со считывателем штрих-кодов, например, COM9;
@@ -23,15 +19,14 @@
 
 Значения по умолчанию: 
 ```css
-Port-OpenMode : r;
-Port-BaudRate : 9600;
-Port-Parity : none;
+Port-OpenMode        : r;
+Port-BaudRate        : 9600;
+Port-Parity          : none;
 Port-CharacterLength : 8;
-Port-StopBits : 1;
-Port-FlowControl : none;
+Port-StopBits        : 1;
+Port-FlowControl     : none;
 ```
 ### 1.3 Синтаксис
----
 При заполнении файла с настройками важно придерживаться синтаксиса. В противном случае программа может работать некорректро или не рабоать совсем.
 
 Каждую настройку необходимо писать таким образом:
@@ -40,13 +35,13 @@ Port-FlowControl : none;
 ```
 Пример заполнения файла:
 ```css
-Api-key : fsof00af9fbg08derjvsre9;
-Port-Name : COM1;
-Port-OpenMode : r;
-Port-BaudRate : 9600;
-Port-Parity : none;
+Api-key              : fsof00af9fbg08derjvsre9;
+Port-Name            : COM1;
+Port-OpenMode        : r;
+Port-BaudRate        : 9600;
+Port-Parity          : none;
 Port-CharacterLength : 8;
-Port-StopBits : 1;
-Port-FlowControl : none;
+Port-StopBits        : 1;
+Port-FlowControl     : none;
 ```
 Порядок параметров в данном файле соблюдать необязательно.

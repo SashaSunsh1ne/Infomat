@@ -1,5 +1,4 @@
 <?php
-namespace controllers;
 
 define ("API_KEY", "Api-key");
 define ("PORT", "Port-Name");
@@ -12,7 +11,6 @@ define ("FLOW_CONTROL", "Port-FlowControl");
 
 class ConfigController
 {
-
     public function getParam($paramName = API_KEY) {
         $content = file_get_contents(getcwd() . "/config/config.txt");
         $content = preg_replace('/\s+/', '', $content);
@@ -25,5 +23,4 @@ class ConfigController
         }
         return null;
     }
-
 }

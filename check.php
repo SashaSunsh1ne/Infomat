@@ -1,9 +1,6 @@
-<?
-use controllers\ConfigController;
-use controllers\CheckController;
-include_once("controllers/ConfigController.php");
-include_once("controllers/CheckController.php");
-$config = new ConfigController();
+<? include_once("controllers/ConfigController.php") ?>
+<? include_once("controllers/CheckController.php") ?>
+<? $config = new ConfigController();
 $url = "http://university.cchgeu.ru/infomat/hs/infomat";
 $studentExist = [0];
 $getInfoStudentData = null;

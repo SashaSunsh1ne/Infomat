@@ -1,8 +1,5 @@
-<?php
-use controllers\IndexController;
-include("controllers/IndexController.php");
-$controller = new IndexController();
-?>
+<? include_once ("controllers/IndexController.php") ?>
+<? $controller = new IndexController() ?>
 <!DOCTYPE html>
 <html lang="en">
 

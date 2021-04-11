@@ -1,5 +1,4 @@
 <?php
-namespace serialPort;
 
 define ("SERIAL_DEVICE_NOTSET", 0);
 define ("SERIAL_DEVICE_SET", 1);

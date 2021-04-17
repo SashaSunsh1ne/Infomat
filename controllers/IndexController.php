@@ -16,31 +16,32 @@ class IndexController
     public function __construct()
     {
         $this->config = new ConfigController();
+
         $this->serial = new PhpSerial();
-
-
         $this->serial->deviceSet($this->config->getParam(PORT));
-
         $this->portConfigure(array(
-            "baudRate"          => $this->config->getParam(BAUD_RATE) ?:            9600,
-            "parity"            => $this->config->getParam(PARITY) ?:               "none",
-            "characterLength"   => $this->config->getParam(CHARACTER_LENGTH) ?:     8,
-            "stopBits"          => $this->config->getParam(STOP_BITS) ?:            1,
-            "flowControl"       => $this->config->getParam(FLOW_CONTROL) ?:         "none"
+            "baudRate" => $this->config->getParam(BAUD_RATE) ?:                 9600,
+            "parity" => $this->config->getParam(PARITY) ?:                      "none",
+            "characterLength" => $this->config->getParam(CHARACTER_LENGTH) ?:   8,
+            "stopBits" => $this->config->getParam(STOP_BITS) ?:                 1,
+            "flowControl" => $this->config->getParam(FLOW_CONTROL) ?:           "none"
         ));
-
-        $this->serial->deviceOpen($this->config->getParam(OPEN_MODE) ?: "r");
     }
 
-    public function readSerialUntilResult()
+    public function readSerialUntilResult($seconds = 1)
     {
-        $this->serial->deviceOpen($this->config->getParam(OPENMODE));
-        while (!$this->barcode)
-        {
-            $this->barcode = $this->serial->readPort() ?: null;
-            sleep(1);
+        $timer = 0;
+        $iterationsPerSeconds = 4;
+        $this->serial->deviceOpen($this->config->getParam(OPEN_MODE) ?: "r");
+        $this->isTimerOn = true;
+        while ((!$this->barcode || $this->barcode == "No card") && ($timer <= $seconds * $iterationsPerSeconds)) {
+            $this->barcode = $this->serial->readPort() ?: "No card";
+            sleep(1 / $iterationsPerSeconds);
+            $timer++;
         }
         $this->serial->deviceClose();
+        $this->isTimerOn = false;
+        die($this->barcode);
     }
 
     public function portConfigure(array $params)
@@ -54,20 +55,16 @@ class IndexController
         $this->serial->confBaudRate($params["flowControl"]);
     }
 
-    public function waitForCard()
+    public function isTimerOn()
     {
-        if ($this->isTimerOn)
-            return '<p>Error</p>';
-        new EvTimer(0, 1, function () {
-            echo "итерация = ", Ev::iteration(), PHP_EOL;
-            if (Ev::iteration() >= 30) {
-                $this->isTimerOn = false;
-            }
-        });
-        return '<p>Success</p>';
+        return $this->isTimerOn;
     }
 
-    public function isTimerOn() {
-        return $this->isTimerOn;
+    public function getBarcode()
+    {
+        if ($this->barcode != "No card" || !$this->barcode)
+            return null;
+        else
+            return $this->barcode;
     }
 }

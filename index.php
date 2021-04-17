@@ -22,6 +22,7 @@
             <p><b>Поднесите пропуск к сканеру</b></p>
             <p><input required type="text" name="barcode" id="barcode" placeholder="Номер пропуска"></p>
             <input type="submit" value="Проверить данные">
+            <? $controller->readSerialUntilResult(5) ?>
         </form>
     </div>
 

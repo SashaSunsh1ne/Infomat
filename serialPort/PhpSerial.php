@@ -155,7 +155,7 @@ class PhpSerial
 	 * @param string $mode Opening mode : same parameter as fopen()
 	 * @return bool
 	 */
-	function deviceOpen ($mode = "r+b")
+	function deviceOpen ($mode = "r")
 	{
 		if ($this->_dState === SERIAL_DEVICE_OPENED)
 		{

@@ -52,7 +52,6 @@ if ($responseSearchStudent['code'] == 200) {
                 <button id="print_button" onclick="sendToPrinter()">Печать</button>
 
                 <script>
-                    setTimeout(function () { window.location.replace('index.php') }, 30 * 1000);
                     const print_form = $('form[name=print_form]');
                     const print_button = $('#print_button');
                     const count = $('input[name=count]');
@@ -113,5 +112,8 @@ if ($responseSearchStudent['code'] == 200) {
     <br>
     <button onclick="window.location.replace('index.php')">Вернуться на главную</button>
 </div>
+<script>
+    setTimeout(function () { window.location.replace('index.php') }, 30 * 1000);
+</script>
 </body>
 </html>

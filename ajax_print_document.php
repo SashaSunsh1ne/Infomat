@@ -24,6 +24,7 @@ if ($responseFormDocument['code'] == 200) {
             'code' => 200,
             'result' => (bool) $rez,
             'document' => $documentNumber,
+            'count' => $count,
             'file' => $file,
         ];
     } else {

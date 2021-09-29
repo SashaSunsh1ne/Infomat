@@ -80,7 +80,17 @@ if ($responseSearchStudent['code'] == 200) {
                             url: "ajax_print_document.php",
                             type: "post",
                             data: print_form.serialize(),
-                            success: function () { window.location.replace('index.php') }
+                            success: function (response) {
+                                response = JSON.parse(response);
+                                registerIssueDocument(response.document, response.count);
+                            }
+                        });
+                    }
+                    function registerIssueDocument(document, count) {
+                        $.ajax({
+                            url: "ajax_register_issue_document.php",
+                            type: "post",
+                            data: {document: document, count: count}
                         });
                     }
                 </script>

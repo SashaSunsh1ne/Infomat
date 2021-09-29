@@ -7,5 +7,5 @@ $count = $_POST['count'];
 $config = new ConfigParser();
 $infomatApi = new InfomatApi($config->getParam(ConfigParser::$API_KEY));
 
-$responseRegister = $infomatApi->registerIssueDocument($document);
+for ($i = 1; $i <= $count; $i++) $infomatApi->registerIssueDocument($document);
 header('Location: index.php');
